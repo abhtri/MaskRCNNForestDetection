@@ -1,0 +1,24 @@
+<html>
+<head>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="{{
+  url_for('static', filename='jquery.js') }}">\x3C/script>')
+ </script>
+ <script type=text/javascript>
+  $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+</script>
+<script type=text/javascript src="{{
+  url_for('static', filename='myjs.js') }}"></script> 
+</head>
+<body>
+<div>
+      <span class="btn btn-default btn-file">
+        Browse <input type="file" name="image" id="image">
+      </span>
+
+    <input type="submit" value="Upload your image" class="btn btn-primary" id="submit1">
+</div>
+<div id= "div1"></div>
+<img style='display:block;' id='baseimage' src='' />
+</body>
+</html>
