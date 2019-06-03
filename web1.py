@@ -21,10 +21,10 @@ def hello():
     if request.method == 'POST':  
         f = request.files['image']
         print('saving the uploaded image ')
-        f.save('var/' + '1.jpg')
+        f.save('var1/' + '1.jpg')
         img = ms.serviceImage1()
-        cv2.imwrite('var/messigray.jpg',img)
-        img1 = cv2.imread('var/messigray.jpg')
+        cv2.imwrite('var1/messigray.jpg',img)
+        img1 = cv2.imread('var1/messigray.jpg')
         print('image 1 read ')
         _, img_encoded = cv2.imencode('.jpg', img1)
         print('sending data back')
@@ -34,9 +34,9 @@ def hello():
 def upload_file():
     if request.method == 'POST':
         f = request.files['image']
-        f.save('var/' + '1.jpg')
+        f.save('var1/' + '1.jpg')
         #img = cv2.imread(os.path.join(folder,filename))
-        img = cv2.imread('var/1.jpg')
+        img = cv2.imread('var1/1.jpg')
         _, img_encoded = cv2.imencode('.jpg', img)
         return base64.b64encode(img_encoded)
 
