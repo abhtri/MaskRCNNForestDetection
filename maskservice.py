@@ -28,7 +28,7 @@ from mrcnn import serveVisual
 sys.path.append(os.path.join(ROOT_DIR, "samples/balloon"))  # To find local version
 import balloon
 
-COCO_MODEL_PATH = os.path.join(ROOT_DIR, "var\\mask_rcnn_forest_0006.h5")
+COCO_MODEL_PATH = os.path.join(ROOT_DIR, "var1\\mask_rcnn_forest_0006.h5")
 
 config = balloon.BalloonConfig()
 class InferenceConfig(config.__class__):
@@ -46,7 +46,7 @@ class MaskService():
 
 def serviceImage1():
     mask1 = MaskService()
-    path = 'var/1.jpg'
+    path = 'var1/1.jpg'
     image = skimage.io.imread(path)
     results = mask1.model.detect([image], verbose=0)
     r = results[0]
