@@ -28,7 +28,7 @@ from mrcnn import serveVisual
 sys.path.append(os.path.join(ROOT_DIR, "samples/balloon"))  # To find local version
 import balloon
 
-COCO_MODEL_PATH = os.path.join(ROOT_DIR, "var1\\mask_rcnn_forest_0006.h5")
+COCO_MODEL_PATH = os.path.join(ROOT_DIR, "var1\\mask_rcnn_forest_0010.h5")
 
 config = balloon.BalloonConfig()
 class InferenceConfig(config.__class__):
