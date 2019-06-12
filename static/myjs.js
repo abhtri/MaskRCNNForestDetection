@@ -14,6 +14,7 @@ $( document ).ready(function() {
 				success: function(result)
 				{
 					$("#baseimage").attr("src", 'data:image/jpg;base64,'+result);
+					$("#baseimage").attr("style",'display:block; width :500px;')
 				}
 			}
 		);
