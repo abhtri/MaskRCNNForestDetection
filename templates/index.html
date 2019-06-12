@@ -4,6 +4,10 @@
 <script>window.jQuery || document.write('<script src="{{
   url_for('static', filename='jquery.js') }}">\x3C/script>')
  </script>
+ <script type=text/javascript src="{{
+  url_for('static', filename='bootstrap.min.js') }}"></script> 
+ <link rel="stylesheet" media="screen" href = "{{ url_for('static', filename='bootstrap.min.css') }}">
+
  <script type=text/javascript>
   $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
 </script>
@@ -11,14 +15,43 @@
   url_for('static', filename='myjs.js') }}"></script> 
 </head>
 <body>
-<div>
-      <span class="btn btn-default btn-file">
-        Browse <input type="file" name="image" id="image">
-      </span>
+<nav class="navbar navbar-inverse">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+			<span class="sr-only">Toggle navigation</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Sky View
+	  </a>
+	  <img alt="Brand" src="{{
+				url_for('static', filename='icon.png') }}" style="width: 20px;padding-top: 15px;">
+    </div>
+		 <ul class="nav navbar-nav navbar-right">
+			<li><a href="#">Tanmana Sadhu</a></li>
+		</ul>
+		
+	</div>
+</nav>
+<div class="container">
+	<div class ='row'>
+		<div class='col-xs-6'> <h3>Forest Detection</h3></div>
+	</div>
+	<div class="row">
+		  <span class="btn btn-default btn-file">
+			Browse <input type="file" name="image" id="image" class="btn btn-primary" id="submit1">
+		  </span>
 
-    <input type="submit" value="Upload your image" class="btn btn-primary" id="submit1">
+		<input type="submit" value="Upload your image" class="btn btn-primary" id="submit1">
+	</div>
+	<div id= "div1"></div>
+	<div class='row'>
+		<div class='col-xs-12'>
+			<img style='display:block;' id='baseimage' src='' />
+		</div>
+	</div>
 </div>
-<div id= "div1"></div>
-<img style='display:block;' id='baseimage' src='' />
 </body>
 </html>
